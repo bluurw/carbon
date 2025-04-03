@@ -1,0 +1,11 @@
+__pycache__
+bin
+include
+lib
+lib64
+session_name.session
+session_name-journal.session
+pyvenv.cnf
+main copy.py
+carbon copy.py
+verificar.txt
