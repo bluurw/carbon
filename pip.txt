@@ -1,0 +1,11 @@
+[TELETHON]
+https://pypi.org/project/Telethon/
+pip install Telethon
+
+[DOTENV]
+https://pypi.org/project/python-dotenv/
+pip install python-dotenv
+
+[OS]
+https://pypi.org/project/os-sys/
+pip install os-sys
