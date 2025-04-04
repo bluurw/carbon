@@ -8,7 +8,7 @@ O projeto Carbon, ou Carbono, tem o nome derivado das folhas de carbono que serv
 Desta maneira, o foco do projeto esta em salvar informacoes de grupos do telegram, antes que eles sejam extintos.
 
 Atualmente a moderacao do telegram esta banindo muitos canais, alguns, sem qualquer motivo, outros, por ma conduta.
-![alt text](image.png)
+![alt text](/carbon/imgs/telgram_moderation_overview_graphic.png)
 https://telegram.org/moderation
 
 A ideia nasceu oficialmente no dia 24/03/25 e espero que consiga seguir em frente.
