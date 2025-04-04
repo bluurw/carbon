@@ -52,14 +52,16 @@ while True:
                 Carbon.client.loop.run_until_complete(Carbon.toLocalSave(SOURCE, path_save=path_save_input, filter=filter))
                 
             elif choose_option_save_clone == 3:
+                banners.carbon_banner_bluured()
                 print('Ainda em desenvolvimento')
+                time.sleep(1.0)
+                input('\n...PRESS ANY KEY...')
                 
             elif choose_option_save_clone == 0:
                 break
                 
             else:
-                banners.carbon_banner_bluured()
-                input_clone_save_foward_panel()
+                continue
 
     elif choose_option == 2:
         while True:
