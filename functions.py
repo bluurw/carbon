@@ -8,7 +8,10 @@ def load_credentials():
         load_dotenv(dotenv_path=dotenv_path)
         API_ID = os.getenv("API_ID")
         API_HASH = os.getenv("API_HASH")
-        return API_ID, API_HASH
+        if len(API_ID) == 0 or len(API_HASH) == 0:
+            return 0
+        else:
+            return API_ID, API_HASH
     except Exception as err:
         return 0
 
@@ -23,5 +26,3 @@ def create_credentials(API_ID, API_HASH):
                 return 1
     except Exception as err:
         return 0
-
-print(load_credentials())
