@@ -1,9 +1,11 @@
 import os
 from dotenv import load_dotenv
+from pathlib import Path
 
 def load_credentials():
     try:
-        load_dotenv()
+        dotenv_path = Path('./credentials.env')
+        load_dotenv(dotenv_path=dotenv_path)
         API_ID = os.getenv("API_ID")
         API_HASH = os.getenv("API_HASH")
         return API_ID, API_HASH
@@ -21,3 +23,5 @@ def create_credentials(API_ID, API_HASH):
                 return 1
     except Exception as err:
         return 0
+
+print(load_credentials())
