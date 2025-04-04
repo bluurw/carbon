@@ -1,17 +1,16 @@
 from telethon import TelegramClient
 from telethon.tl.functions.channels import JoinChannelRequest, LeaveChannelRequest
-
 import os
 
 class Carbon:
     def __init__(self, API_ID, API_HASH):
-        self.API_ID = API_ID
-        self.API_HASH = API_HASH
-        self.client = TelegramClient("session_name", API_ID, API_HASH)
+        API_ID = API_ID
+        API_HASH = API_HASH
+        self.Carbon = TelegramClient("session_name", API_ID, API_HASH)
     
     # join group
     async def join_group(self, group_link):
-        client = self.client
+        client = self.Carbon
         await client.start()
         try:
             await client(JoinChannelRequest(group_link))
@@ -21,7 +20,7 @@ class Carbon:
     
     # leave group
     async def leave_group(self, group_link):
-        client = self.client
+        client = self.Carbon
         await client.start()
         try:
             entity = await client.get_entity(group_link)
@@ -31,7 +30,7 @@ class Carbon:
             return f"failure to leave: {e}"
 
     async def toFoward(self, source, destination, filter=[], limit=100):
-        client = self.client
+        client = self.Carbon
         await client.start()
         try:
             source_entity = await client.get_entity(source)
@@ -63,7 +62,7 @@ class Carbon:
     async def toLocalSave(self, source, path_save='~/Downloads/Telegram/carbon/', filter=[], limit=100):
         os.makedirs(path_save, exist_ok=True)
 
-        client = self.client
+        client = self.Carbon
         await client.start()
         source_entity = await client.get_entity(source)
         async for message in client.iter_messages(source_entity, limit=limit):
