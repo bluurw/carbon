@@ -1,13 +1,13 @@
-from carbon import Carbon
 import os
+import time
 
+from carbon import Carbon
+import functions
 import banners
 import panels
 
-# Criar um arquivo para guardar estas configuracoes
-API_ID =   #API ID
-API_HASH = "" #API Hash
-Carbon = Carbon(API_ID, API_HASH)
+credentials = functions.load_credentials()
+Carbon = Carbon(credentials[0], credentials[1])
 
 while True:
     banners.carbon_banner_bluured()
@@ -23,8 +23,8 @@ while True:
         if choose_option_save_clone == 1:
             banners.carbon_banner_bluured()
             print('\033[1mC\033[0mLONAR_\033[1mC\033[0mANAL - SAVE_FOWARD')
-            source_input = str(input(f'INSIRA O NOME DO GRUPO ORIGEM: t.me/')) # INSIRA SOMENTE O NOME t.me/Nome
-            destination_input = str(input(f'INSIRA O NOME DO GRUPO DESTINO: t.me/')) # INSIRA SOMENTE O NOME t.me/Nome
+            source_input = str(input(f'SOURCE GROUP: t.me/'))
+            destination_input = str(input(f'DESTINATION GROUP: t.me/'))
             SOURCE = f"t.me/{source_input}" 
             DESTINATION = f"t.me/{destination_input}"
 
@@ -38,7 +38,8 @@ while True:
         elif choose_option_save_clone == 2:
             banners.carbon_banner_bluured()
             print('\033[1mC\033[0mLONAR_\033[1mC\033[0mANAL - SAVE_LOCAL')
-            source_input = str(input(f'INSIRA O NOME DO GRUPO ORIGEM: t.me/'))
+            source_input = str(input(f'SOURCE GROUP: t.me/'))
+            path_save_input = str(input(f'LOCAL SAVE: '))
             SOURCE = f"t.me/{source_input}" # INSIRA SOMENTE O NOME t.me/Nome
                 
             panels.filter_itens_panel()
@@ -46,7 +47,7 @@ while True:
             filters = ["messages", "images", "videos", "audios", "docs", "links"]
             filter = [filters[int(i)] for i in filter_itens_input]
 
-            Carbon.client.loop.run_until_complete(Carbon.toLocalSave(SOURCE, filter=filter))
+            Carbon.client.loop.run_until_complete(Carbon.toLocalSave(SOURCE, path_save=path_save_input, filter=filter))
             
         elif choose_option_save_clone == 3:
             print('Ainda em desenvolvimento')
@@ -59,10 +60,36 @@ while True:
             input_clone_save_foward_panel()
 
     elif choose_option == 2:
-        print('Arquivo de configuracao')
-        #Remover arquivo existente
-        #Criar novo arquivo
-    
+        while True:
+            banners.carbon_banner_bluured()
+            credentials_panel()
+            choose_option_credentials = int(input('DIGITE UMA DAS OPCOES: '))
+
+            if choose_option_credentials == 1:
+                banners.carbon_banner_bluured()
+                print('\033[1mC\033[0mONFIG_API_\033[1mC\033[0mREDENTIALS')
+                input_api_id = str(input('Digite o ID da API: '))
+                input_api_hash = str(input('Digite a HASH da API: '))
+                create_credentials(input_api_id, input_api_hash)
+                if create_credentials == 1:
+                    print('Arquivo de credenciais criado com sucesso')
+                    input('Pressione qualquer tecla para voltar ao menu')
+                elif create_credentials == 0:
+                    print('Erro ao criar arquivo de credenciais')
+
+            elif choose_option_credentials == 2:
+                banners.carbon_banner_bluured()
+                print('\033[1mC\033[0mREDENTIALS')
+                credentials = functions.load_credentials()
+                print(f'API_ID: {credentials[0]} \nAPI_HASH: {credentials[1]}')
+                time.sleep(5)
+                input('PRESS ANY KEY')
+            elif choose_option_credentials == 0:
+                break
+            else:
+                banners.carbon_banner_bluured()
+                continue
+
     elif choose_option == 3:
         banners.carbon_banner_bluured()
         about_me()
@@ -73,7 +100,4 @@ while True:
    
     else:
         banners.carbon_banner_bluured()
-        options_panel()
-
-
-# +5511998765432
+        continue

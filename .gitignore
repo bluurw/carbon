@@ -3,6 +3,7 @@ bin
 include
 lib
 lib64
+credentials.env
 session_name.session
 session_name-journal.session
 pyvenv.cnf

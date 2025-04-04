@@ -35,6 +35,14 @@ def filter_itens_panel():
 [5] - LINKS
 ''')
 
+def credentials_panel():
+    print('\033[1mM\033[0mENU_DE_\033[1mC\033[0mREDENCIAIS')
+    print('''
+[1] - CRIAR_CREDENCIAIS
+[2] - VER_CREDENCIAIS
+[0] - RETURN
+''')
+
 def about_me():
     print('The macaws above my head dont let me think.')
     print('~telegram archive')
