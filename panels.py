@@ -1,4 +1,5 @@
 def options_panel():
+    print('\033[1mM\033[0mENU')
     print('''
 [1] - \033[1mC\033[0mLONAR_\033[1mC\033[0mANAL
 [2] - OPTIONS
