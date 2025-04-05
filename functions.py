@@ -1,28 +1,19 @@
-import os
-from dotenv import load_dotenv
-from pathlib import Path
+import time
 
-def load_credentials():
-    try:
-        dotenv_path = Path('./credentials.env')
-        load_dotenv(dotenv_path=dotenv_path)
-        API_ID = os.getenv("API_ID")
-        API_HASH = os.getenv("API_HASH")
-        if len(API_ID) == 0 or len(API_HASH) == 0:
-            return 0
-        else:
-            return API_ID, API_HASH
-    except Exception as err:
-        return 0
+import banners
+import panels
 
-def create_credentials(API_ID, API_HASH):
-    try:
-        if len(API_ID) == 0 or len(API_HASH) == 0:
-            return 0
-        else:
-            with open('credentials.env', 'w') as file:
-                file.write(f'API_ID={API_ID}\n')
-                file.write(f'API_HASH={API_HASH}\n')
-                return 1
-    except Exception as err:
-        return 0
+# banner for negative credentials test result
+def error_credentials():
+    banners.carbon_banner_bluured()
+    print('> The parakeets invalidate your key.')
+    print('> Create valid credencials, or correct existing ones.')
+    time.sleep(1.0)
+    input('\n...PRESS ANY KEY...')
+
+# filter
+def get_filters():
+    panels.filter_itens_panel()
+    filter_map = ["messages", "images", "videos", "audios", "docs", "links"] # types
+    filter_input = input('> Enter the number of types you want to filter (no space): ')
+    return [filter_map[int(i)] for i in filter_input if i.isdigit() and int(i) < len(filter_map)]

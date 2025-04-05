@@ -1,17 +1,13 @@
 import os
 import time
+import asyncio
 
 from carbon import Carbon
 import functions
 import banners
 import panels
+import security
 
-def error_credentials():
-    banners.carbon_banner_bluured()
-    print('> The parakeets invalidate your key.')
-    print('> Create valid credencials, or correct existing ones.')
-    time.sleep(1.0)
-    input('\n...PRESS ANY KEY...')
 
 while True:
     #IMPLANTAR TRY
@@ -27,59 +23,62 @@ while True:
             choose_option_save_clone = int(input('> Enter chosen option: '))
             
             if choose_option_save_clone == 1:
+                while True:
+                    credentials = security.load_credentials()
+                    carbon_instance = Carbon(credentials[0], credentials[1])
 
-                credentials = functions.load_credentials()
-            
-                if credentials == 0:
-                    error_credentials()
+                    # credential test 
+                    test_credential = carbon_instance.start_client()
 
-                else:
-                    banners.carbon_banner_bluured()
-                    print('\033[1mC\033[0mLONAR_\033[1mC\033[0mANAL - SAVE_FOWARD \n')
-                    source_input = str(input(f'> Source Group: t.me/'))
-                    destination_input = str(input(f'> Destination Group: t.me/'))
-                    SOURCE = f"t.me/{source_input}" 
-                    DESTINATION = f"t.me/{destination_input}"
+                    if test_credential:
+                        banners.carbon_banner_bluured()
+                        print('\033[1mC\033[0mLONE_\033[1mC\033[0mANAL - SAVE_FOWARD \n')
+                        source_input = str(input(f'> Source Group: t.me/'))
+                        destination_input = str(input(f'> Destination Group: t.me/'))
+                        SOURCE = f"t.me/{source_input}" 
+                        DESTINATION = f"t.me/{destination_input}"
 
-                    panels.filter_itens_panel()
-                    filter_itens_input = list(input('> Insira o numero de cada opcao que deseja filtrar: '))
-                    filters = ["messages", "images", "videos", "audios", "docs", "links"]
-                    filter = [filters[int(i)] for i in filter_itens_input]
-
-                    Carbon = Carbon(credentials[0], credentials[1])
-                    Carbon.client.loop.run_until_complete(Carbon.toFoward(SOURCE, DESTINATION, filter=filter))
-                
-            elif choose_option_save_clone == 2:
-
-                credentials = functions.load_credentials()
-
-                if credentials == 0:
-                    error_credentials()
-                
-                else:
-                    banners.carbon_banner_bluured()
-                    print('\033[1mC\033[0mLONAR_\033[1mC\033[0mANAL - SAVE_LOCAL \n')
-                    source_input = str(input(f'> Source Group: t.me/'))
-                    SOURCE = f"t.me/{source_input}" # INSIRA SOMENTE O NOME t.me/Nome
-                    DESTINATION = str(input(f'> Local Save: '))
+                        filter = functions.get_filters()
+                        carbon_instance.client.loop.run_until_complete(carbon_instance.toFoward(SOURCE, DESTINATION, filter=filter))
+                        break
                     
-                    panels.filter_itens_panel()
-                    filter_itens_input = list(input('> Insira o numero de cada opcao que deseja filtrar: '))
-                    filters = ["messages", "images", "videos", "audios", "docs", "links"]
-                    filter = [filters[int(i)] for i in filter_itens_input]
+                    else:
+                        functions.error_credentials()
+                        break
 
-                    Carbon.client.loop.run_until_complete(Carbon.toLocalSave(SOURCE, path_save=DESTINATION, filter=filter))
+            elif choose_option_save_clone == 2:
+                while True:
+                    credentials = security.load_credentials()
+                    carbon_instance = Carbon(credentials[0], credentials[1])
+
+                    # credential test 
+                    test_credential = carbon_instance.start_client()
+
+                    if test_credential:
+                        banners.carbon_banner_bluured()
+                        print('\033[1mC\033[0mLONE_\033[1mC\033[0mANAL - SAVE_LOCAL \n')
+                        source_input = str(input(f'> Source Group: t.me/'))
+                        SOURCE = f"t.me/{source_input}" # t.me/Nome
+                        DESTINATION = str(input(f'> Local Save: '))
+                    
+                        filter = functions.get_filters()
+                        carbon_instance.client.loop.run_until_complete(carbon_instance.toLocalSave(SOURCE, path_save=DESTINATION, filter=filter))
+                        break
+                
+                    else:
+                        functions.error_credentials()
+                        break
                 
             elif choose_option_save_clone == 3:
 
-                credentials = functions.load_credentials()
+                credentials = security.load_credentials()
 
                 if credentials == 0:
-                    error_credentials()
-                    
+                    functions.error_credentials()
+                    break
                 else:
                     banners.carbon_banner_bluured()
-                    print('Ainda em desenvolvimento')
+                    print('Still in development')
                     time.sleep(1.0)
                     input('\n...PRESS ANY KEY...')
                 
@@ -98,10 +97,11 @@ while True:
             if choose_option_credentials == 1:
                 banners.carbon_banner_bluured()
                 print('\033[1mC\033[0mONFIG_API_\033[1mC\033[0mREDENTIALS \n')
-                input_api_id = str(input('> Digite o ID da API: '))
-                input_api_hash = str(input('> Digite a HASH da API: '))
-                create_credential = functions.create_credentials(input_api_id, input_api_hash)
+                input_api_id = str(input('> Enter API ID: '))
+                input_api_hash = str(input('> Enter API HASH: '))
+                create_credential = security.create_credentials(input_api_id, input_api_hash)
                 if create_credential == 1:
+                    security.load_credentials()
                     time.sleep(1.5)
                     print('\n> Sucess creating file with credentials')
                     time.sleep(1.0)
@@ -115,7 +115,7 @@ while True:
             elif choose_option_credentials == 2:
                 banners.carbon_banner_bluured()
                 print('\033[1mC\033[0mREDENTIALS \n')
-                credentials = functions.load_credentials()
+                credentials = security.load_credentials()
                 print(f'API_ID: {credentials[0]} \nAPI_HASH: {credentials[1]} \n')
                 time.sleep(2.5)
                 input('...PRESS ANY KEY...')
@@ -134,6 +134,6 @@ while True:
     elif choose_option == 0:
         os.system('clear')
         break
-   
+
     else:
         continue

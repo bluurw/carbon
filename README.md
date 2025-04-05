@@ -11,6 +11,6 @@ Atualmente a moderacao do telegram esta banindo muitos canais, alguns, sem qualq
 ![alt text](/carbon/imgs/telgram_moderation_overview_graphic.png)
 https://telegram.org/moderation
 
-A ideia nasceu oficialmente no dia 24/03/25 e espero que consiga seguir em frente.
+A ideia nasceu oficialmente no dia 27/03/25 e espero que consiga seguir em frente.
 
 O objetivo, alem de concluir o programa, e armazenar o maximo de conteudo possivel do grupos publicoos, e posteriormente privados, os quais for tendo acesso.
