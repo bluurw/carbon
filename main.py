@@ -12,13 +12,14 @@ import security
 while True:
     #IMPLANTAR TRY
     #ValueError
-    banners.carbon_banner_bluured()
+    
+    banners.random_banner()
     panels.options_panel()
     choose_option = int(input('> Enter chosen option: '))
     
     if choose_option == 1:
         while True:
-            banners.carbon_banner_bluured()
+            banners.random_banner()
             panels.options_clone_panel()
             choose_option_save_clone = int(input('> Enter chosen option: '))
             
@@ -31,8 +32,8 @@ while True:
                     test_credential = carbon_instance.start_client()
 
                     if test_credential:
-                        banners.carbon_banner_bluured()
-                        print('\033[1mC\033[0mLONE_\033[1mC\033[0mANAL - SAVE_FOWARD \n')
+                        banners.random_banner()
+                        print('\033[1mC\033[0mLONE_\033[1mC\033[0mHANNEL - SAVE_FOWARD \n')
                         source_input = str(input(f'> Source Group: t.me/'))
                         destination_input = str(input(f'> Destination Group: t.me/'))
                         SOURCE = f"t.me/{source_input}" 
@@ -55,8 +56,8 @@ while True:
                     test_credential = carbon_instance.start_client()
 
                     if test_credential:
-                        banners.carbon_banner_bluured()
-                        print('\033[1mC\033[0mLONE_\033[1mC\033[0mANAL - SAVE_LOCAL \n')
+                        banners.random_banner()
+                        print('\033[1mC\033[0mLONE_\033[1mC\033[0mHANNEL - SAVE_LOCAL \n')
                         source_input = str(input(f'> Source Group: t.me/'))
                         SOURCE = f"t.me/{source_input}" # t.me/Nome
                         DESTINATION = str(input(f'> Local Save: '))
@@ -77,7 +78,7 @@ while True:
                     functions.error_credentials()
                     break
                 else:
-                    banners.carbon_banner_bluured()
+                    banners.random_banner()
                     print('Still in development')
                     time.sleep(1.0)
                     input('\n...PRESS ANY KEY...')
@@ -90,12 +91,12 @@ while True:
 
     elif choose_option == 2:
         while True:
-            banners.carbon_banner_bluured()
+            banners.random_banner()
             panels.credentials_panel()
             choose_option_credentials = int(input('> Enter chosen option: '))
 
             if choose_option_credentials == 1:
-                banners.carbon_banner_bluured()
+                banners.random_banner()
                 print('\033[1mC\033[0mONFIG_API_\033[1mC\033[0mREDENTIALS \n')
                 input_api_id = str(input('> Enter API ID: '))
                 input_api_hash = str(input('> Enter API HASH: '))
@@ -113,7 +114,7 @@ while True:
                     input('\n...PRESS ANY KEY...')
 
             elif choose_option_credentials == 2:
-                banners.carbon_banner_bluured()
+                banners.random_banner()
                 print('\033[1mC\033[0mREDENTIALS \n')
                 credentials = security.load_credentials()
                 print(f'API_ID: {credentials[0]} \nAPI_HASH: {credentials[1]} \n')
@@ -122,11 +123,11 @@ while True:
             elif choose_option_credentials == 0:
                 break
             else:
-                banners.carbon_banner_bluured()
+                banners.random_banner()
                 continue
 
     elif choose_option == 3:
-        banners.carbon_banner_bluured()
+        banners.random_banner()
         panels.about_me()
         time.sleep(5)
         input('...PRESS ANY KEY...')
