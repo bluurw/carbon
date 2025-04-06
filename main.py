@@ -35,11 +35,13 @@ while True:
                     if test_credential:
                         banners.random_banner()
                         print('\033[1mC\033[0mLONE_\033[1mC\033[0mHANNEL - SAVE_FOWARD \n')
-                        SOURCE = str(input(f'> Source Group (link or ID): t.me/'))
-                        DESTINATION = str(input(f'> Destination Group (link or ID): t.me/'))
+                        SOURCE = input(f'> Source Group (link or ID): t.me/')
+                        DESTINATION = input(f'> Destination Group (link or ID): t.me/')
 
-                        if not source_input.isnumeric():
+                        if not SOURCE.isnumeric():
                             SOURCE = f"t.me/{SOURCE}"
+                        
+                        if not DESTINATION.isnumeric():
                             DESTINATION = f"t.me/{DESTINATION}"
 
                         filter = functions.get_filters()
@@ -61,13 +63,11 @@ while True:
                     if test_credential:
                         banners.random_banner()
                         print('\033[1mC\033[0mLONE_\033[1mC\033[0mHANNEL - SAVE_LOCAL \n')
-                        source_input = str(input(f'> Source Group: t.me/'))
-                        SOURCE = f"t.me/{source_input}" # t.me/Nome
+                        SOURCE = input(f'> Source Group (link or ID): t.me/')
                         DESTINATION = str(input(f'> Local Save: '))
 
-                        if not source_input.isnumeric():
+                        if not DESTINATION.isnumeric():
                             SOURCE = f"t.me/{SOURCE}"
-                            DESTINATION = f"t.me/{DESTINATION}"
 
                         if DESTINATION == '' or DESTINATION == ' ':
                             DESTINATION = SOURCE
