@@ -91,7 +91,7 @@ class Carbon:
             return False, 'Client not initialized'
         
         if path_save == '' or path_save == ' ':
-            path_save = '~/Downloads/Telegram/carbon/'
+            path_save = 't.me/'
             os.makedirs(path_save, exist_ok=True)
         else:
             os.makedirs(path_save, exist_ok=True)
@@ -103,30 +103,44 @@ class Carbon:
             source_entity = await client.get_entity(source)
             async for message in client.iter_messages(source_entity, limit=limit):
                 if 'images' in filter and message.photo:
-                    file_path = await message.download_media(file=path_save)
+                    os.makedirs(f'{path_save}/imgs/', exist_ok=True)
+                    file_path = await message.download_media(file=f'{path_save}/imgs/')
                     print(f"Dowloaded Image: {file_path}")
 
                 elif 'videos' in filter and message.video:
-                    file_path = await message.download_media(file=path_save)
+                    os.makedirs(f'{path_save}/videos/', exist_ok=True)
+                    file_path = await message.download_media(file=f'{path_save}/videos/')
                     print(f"Dowloaded Video: {file_path}")
 
                 elif 'docs' in filter and message.document:
-                    file_path = await message.download_media(file=path_save)
+                    os.makedirs(f'{path_save}/docs/', exist_ok=True)
+                    file_path = await message.download_media(file=f'{path_save}/docs/')
                     print(f"Dowloaded Doc: {file_path}")
 
                 elif 'audios' in filter and message.audio:
-                    file_path = await message.download_media(file=path_save)
+                    os.makedirs(f'{path_save}/audio/', exist_ok=True)
+                    file_path = await message.download_media(file=f'{path_save}/audio/')
                     print(f"Donwloaded Audio: {file_path}")
 
                 elif 'links' in filter and message.text:
-                    if 'http' in message.text:
-                        with open('downloads/links.txt', 'a', encoding='utf-8') as f:
-                            f.write(f"{message.text}\n")
+                    if 'http' in message.text or 'https' in message.text:
+                        sender_id = await client.get_entity(message.sender_id)  # id remetente
+                        with open(f'{path_save}/links.txt', 'a', encoding='utf-8') as f:
+                            try:
+                                sender_name = sender.first_name if sender.first_name else "Unknown"
+                                f.write(f"{message.date} : Sender:({message.sender_id}|{sender_name}) Chat:{message.chat_id} : {message.text}\n")
+                            except:
+                                f.write(f"{message.date} : Sender:{message.sender_id} Chat:{message.chat_id} : {message.text}\n")    
                         print(f"Link included in saved message: {message.text}")
 
                 elif 'messages' in filter and message.text:
-                    with open(f'{path_save}messages.txt', 'a', encoding='utf-8') as f:
-                        f.write(f"{message.date}: {message.sender_id}: {message.text}\n")
+                    sender_id = await client.get_entity(message.sender_id)  # id remetente
+                    with open(f'{path_save}/messages.txt', 'a', encoding='utf-8') as f:
+                        try:
+                            sender_name = sender.first_name if sender.first_name else "Unknown"
+                            f.write(f"{message.date} : Sender:({message.sender_id}|{sender_name}) Chat:{message.chat_id} : {message.text}\n")
+                        except:
+                            f.write(f"{message.date} : Sender:{message.sender_id} Chat:{message.chat_id} : {message.text}\n")
                     print(f"Saved text message")
                 
             return True
@@ -136,8 +150,6 @@ class Carbon:
         
         finally:
             await self.client.disconnect() # end the session
-
-
 
 
 # Carbon works with a single session for each task.
