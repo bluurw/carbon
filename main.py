@@ -45,7 +45,10 @@ while True:
                             DESTINATION = f"t.me/{DESTINATION}"
 
                         filter = functions.get_filters()
-                        carbon_instance.client.loop.run_until_complete(carbon_instance.toFoward(SOURCE, DESTINATION, filter=filter))
+                        clone = carbon_instance.client.loop.run_until_complete(carbon_instance.toFoward(SOURCE, DESTINATION, filter=filter))
+                        if isinstance(clone, tuple) and not clone[0]:
+                            print(f'>> Cloning process failed: {clone[1]}')
+                            input('\n...PRESS ANY KEY...')
                         break
                     
                     else:
@@ -73,7 +76,10 @@ while True:
                             DESTINATION = SOURCE
                     
                         filter = functions.get_filters()
-                        carbon_instance.client.loop.run_until_complete(carbon_instance.toLocalSave(SOURCE, path_save=DESTINATION, filter=filter))
+                        clone = carbon_instance.client.loop.run_until_complete(carbon_instance.toLocalSave(SOURCE, path_save=DESTINATION, filter=filter))
+                        if isinstance(clone, tuple) and not clone[0]:
+                            print(f'>> Cloning process failed: {clone[1]}')
+                            input('\n...PRESS ANY KEY...')
                         break
                 
                     else:
