@@ -34,7 +34,7 @@ while True:
 
                     if test_credential:
                         banners.random_banner()
-                        print('\033[1mC\033[0mLONE_\033[1mC\033[0mHANNEL - SAVE_FOWARD \n')
+                        print('\033[1mC\033[0mLONE_\033[1mC\033[0mHANNEL - SAVE_FOWARD\n')
                         SOURCE = input(f'> Source Group (link or ID): t.me/')
                         DESTINATION = input(f'> Destination Group (link or ID): t.me/')
 
