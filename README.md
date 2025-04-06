@@ -13,7 +13,7 @@
 
 ### Razão:
 O projeto Carbon, ou Carbono, tem o nome derivado das folhas de carbono que servem para fazer cópias.  
-Desta maneira, o foco do projeto está em salvar informações de grupos do Telegram, antes que eles sejam extintos.
+Desta maneira, o foco do projeto está em copiar informações de grupos do Telegram, antes que eles sejam extintos.
 
 Atualmente, a moderação do Telegram está banindo muitos canais, alguns sem qualquer motivo, outros por má conduta.  
 ![alt text](/carbon/imgs/telgram_moderation_overview_graphic.png)  
@@ -23,7 +23,7 @@ Atualmente, a moderação do Telegram está banindo muitos canais, alguns sem qu
 ![alt text](image.png)
 
 
-### **Passo 1   : Clone ou faca o download do Repositorio**
+### **Passo 1: Clone ou faca o download do Repositorio**
 ```bash
 git clone https://github.com/bluurw/Carbon
 ```
@@ -67,9 +67,12 @@ Após configurar, você poderá utilizar as funcionalidades livremente!
   Melhorar o processo de compactação, tanto para o salvamento local quanto para a clonagem no GitHub.
 
 
-Compatbilidade:
-(Inserir os shields de linux, windows, e mac)
-Linux - OK
-Windows - Nao testado
-Mac - Nao testado
+## **Compatibilidade**
 
+![Linux Support](https://img.shields.io/badge/Linux-OK-green)  
+![Windows Support](https://img.shields.io/badge/Windows-Não%20Testado-yellow)  
+![Mac Support](https://img.shields.io/badge/Mac-Não%20Testado-yellow)  
+
+- **Linux:** OK  
+- **Windows:** Não testado  
+- **Mac:** Não testado
