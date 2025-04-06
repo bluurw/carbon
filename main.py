@@ -7,6 +7,7 @@ import functions
 import banners
 import panels
 import security
+import system
 
 
 while True:
@@ -34,10 +35,12 @@ while True:
                     if test_credential:
                         banners.random_banner()
                         print('\033[1mC\033[0mLONE_\033[1mC\033[0mHANNEL - SAVE_FOWARD \n')
-                        source_input = str(input(f'> Source Group: t.me/'))
-                        destination_input = str(input(f'> Destination Group: t.me/'))
-                        SOURCE = f"t.me/{source_input}" 
-                        DESTINATION = f"t.me/{destination_input}"
+                        SOURCE = str(input(f'> Source Group (link or ID): t.me/'))
+                        DESTINATION = str(input(f'> Destination Group (link or ID): t.me/'))
+
+                        if not source_input.isnumeric():
+                            SOURCE = f"t.me/{SOURCE}"
+                            DESTINATION = f"t.me/{DESTINATION}"
 
                         filter = functions.get_filters()
                         carbon_instance.client.loop.run_until_complete(carbon_instance.toFoward(SOURCE, DESTINATION, filter=filter))
@@ -61,6 +64,13 @@ while True:
                         source_input = str(input(f'> Source Group: t.me/'))
                         SOURCE = f"t.me/{source_input}" # t.me/Nome
                         DESTINATION = str(input(f'> Local Save: '))
+
+                        if not source_input.isnumeric():
+                            SOURCE = f"t.me/{SOURCE}"
+                            DESTINATION = f"t.me/{DESTINATION}"
+
+                        if DESTINATION == '' or DESTINATION == ' ':
+                            DESTINATION = SOURCE
                     
                         filter = functions.get_filters()
                         carbon_instance.client.loop.run_until_complete(carbon_instance.toLocalSave(SOURCE, path_save=DESTINATION, filter=filter))
