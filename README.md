@@ -11,7 +11,7 @@
 ![Python Version](https://img.shields.io/badge/Python-3.11-blue)  
 ![Linux Support](https://img.shields.io/badge/Linux-Compatible-green)
 
-### Razão:
+## **Razão**
 O projeto Carbon, ou Carbono, tem o nome derivado das folhas de carbono que servem para fazer cópias.  
 Desta maneira, o foco do projeto está em copiar informações de grupos do Telegram, antes que eles sejam extintos.
 
@@ -19,16 +19,16 @@ Atualmente, a moderação do Telegram está banindo muitos canais, alguns sem qu
 ![alt text](/carbon/imgs/telgram_moderation_overview_graphic.png)  
 [Mais informações sobre moderação do Telegram](https://telegram.org/moderation)
 
-### Funcionamento:
+## **Funcionamento**
 ![alt text](image.png)
 
 
-### **Passo 1: Clone ou faca o download do Repositorio**
+### Passo 1: Clone ou faca o download do Repositorio
 ```bash
 git clone https://github.com/bluurw/Carbon
 ```
 
-### **Passo 2: Certifique-se de instalar todas as bibliotecas e dependências**
+### Passo 2: Certifique-se de instalar todas as bibliotecas e dependências
 *Isto funcionará melhor em um ambiente virtual
 
 ```bash
@@ -37,17 +37,17 @@ source /bin/activate
 pip install -r requeriments.txt
 ```
 
-### **Passo 3: Obtenha uma credencial de API no Telegram**
+### Passo 3: Obtenha uma credencial de API no Telegram
 Se ainda não possui ou não sabe como obtê-la, siga este link: [API Telegram](https://my.telegram.org/apps "Telegram")
 
 
-### **Passo 4: Executar o Projeto**
+### Passo 4: Executar o Projeto
 Com o ambiente preparado, execute o arquivo `main.py`:  
 ```bash
 python main.py
 ```
 
-### **Passo 5: Configurar Credenciais no Menu**
+### Passo 5: Configurar Credenciais no Menu
 No menu do *Carbon*, selecione a opção *[2] OPTIONS* e configure suas credenciais da API do Telegram.
 Após configurar, você poderá utilizar as funcionalidades livremente!
 
