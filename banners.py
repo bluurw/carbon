@@ -73,7 +73,7 @@ def carbon_fading():
     """)
 
 def random_banner():
-    number = random.randint(0, 7)
+    number = random.randint(0, 6)
     if number == 0:
         return carbon_banner_splash()
     elif number == 1:
