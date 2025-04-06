@@ -56,8 +56,13 @@ Após configurar, você poderá utilizar as funcionalidades livremente!
 
 - **Conceito:** 27/03/2025  
 - **Primeira Versão (1.v):** 04/04/2025  
-- **Atualização 1:** 05/04/2025  
-
+- **Atualização 1:** 05/04/2025
+  - Correcao de bugs; e
+  - Atualizacao da interface.
+- **Atualização 2:** 05/04/2025
+  - Correcao de bugs;
+  - Atualizacao da interface; e
+  - Implantacao de arquivo de log.
 
 ## **Próximas Atualizações**
 
