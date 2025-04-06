@@ -48,4 +48,5 @@ def about_me():
     print('The macaws above my head dont let me think.')
     print('~telegram archive')
     print('Github: https://github.com/bluurw')
+    print('Telegram: t.me/mk_Directory')
     print()

@@ -1,11 +1,11 @@
 import os
 
 class Git:
-    def __init__(self, clone_name, user, password, name_repository):
-        self.clone_name = clone_name
+    def __init__(self, user, password, file_clone_name, name_repository):
         self.user = user
         self.password = password
-        self.name_repository = f'https://github.com/{user}/{name_repository}.git'
+        self.file_clone_name = file_clone_name
+        self.name_repository = f'https://notabug.org/{user}/{name_repository}.git'
     
     def gitInit():
         git_version = os.system('git --version')
@@ -35,3 +35,9 @@ class Git:
 
     #os.remove(path_file)
     #o arquivo devera ser removido do ambiente local
+
+
+git = Git("Bluur", "Gal%l%e99!+AF", '~/Downloads')
+
+
+#https://notabug.org/Bluur/GitAutomate.git
