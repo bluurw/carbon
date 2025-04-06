@@ -56,7 +56,7 @@ class Carbon:
             await client.start()
             
             source_entity = await client.get_entity(source)
-            async for message in client.iter_messages(source_entity, limit=limit):
+            async for message in client.iter_messages(source_entity, limit=limit, reverse=True):
                 if 'images' in filter and message.photo:
                     print(message)
                     await client.send_file(destination, message.media, caption=message.text)
@@ -101,7 +101,7 @@ class Carbon:
             await client.start()
 
             source_entity = await client.get_entity(source)
-            async for message in client.iter_messages(source_entity, limit=limit):
+            async for message in client.iter_messages(source_entity, limit=limit, reverse=True):
                 if 'images' in filter and message.photo:
                     os.makedirs(f'{path_save}/imgs/', exist_ok=True)
                     file_path = await message.download_media(file=f'{path_save}/imgs/')
