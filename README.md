@@ -1,3 +1,5 @@
+[![License](https://img.shields.io/badge/license-MIT-_red.svg)(https://opensource.org/licenses/MIT)]
+[![Contribuitions Welcome](https://img.shields.io/badge/contribuitions-welcome-brightgreen.svg?style=flat)(https://github.com/bluurw/carbon/issues)]
 
      ▄▄·  ▄▄▄· ▄▄▄  ▄▄▄▄·        ▐ ▄ 
     ▐█ ▌▪▐█ ▀█ ▀▄ █·▐█ ▀█▪ ▄█▀▄ •█▌▐█
