@@ -59,12 +59,15 @@ Após configurar, você poderá utilizar as funcionalidades livremente!
 - **Conceito:** 27/03/2025  
 - **Primeira Versão (1.v):** 04/04/2025  
 - **Atualização 1:** 05/04/2025
-  - Correcao de bugs; e
-  - Atualizacao da interface.
+  - Correção de bugs & atualização da interface.
 - **Atualização 2:** 05/04/2025
-  - Correcao de bugs;
-  - Atualizacao da interface; e
-  - Implantacao de arquivo de log.
+  - Correção de bugs & atualização da interface; e
+  - Implantação de arquivo de log.
+- **Atualização 3:** 07/04/2025
+  - Correção de bugs & atualização da interface;
+  - Inserido o modo sem filtros, e stickers no Carbon; e
+  - Inserido no painels nova opção.
+
 
 ## **Próximas Atualizações**
 
@@ -72,7 +75,12 @@ Após configurar, você poderá utilizar as funcionalidades livremente!
   Permitir que o usuário clone o conteúdo de um grupo diretamente para um repositório do GitHub.
 - **Compactação de Dados**:  
   Melhorar o processo de compactação, tanto para o salvamento local quanto para a clonagem no GitHub.
-
+- **Criação de Grupos**:  
+  Permite criar grupos automaticamente via API do Telegram, facilitando a organização e o gerenciamento de comunidades.
+- **Re-clonagem Sequencial**
+  Permitir a clonagem contínua do mesmo grupo a partir da última mensagem clonada, evitando repetições desnecessárias.
+- **Tratamento do Erro de Tempo de Espera** [URGENTE]
+  Corrigir o problema em que o encaminhamento de muitas mensagens gera uma solicitação de tempo de espera, que atualmente é interpretada como erro.
 
 ## **Compatibilidade**
 
