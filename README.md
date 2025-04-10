@@ -1,5 +1,5 @@
-[![License](https://img.shields.io/badge/license-MIT-_red.svg)(https://opensource.org/licenses/MIT)]
-[![Contribuitions Welcome](https://img.shields.io/badge/contribuitions-welcome-brightgreen.svg?style=flat)(https://github.com/bluurw/carbon/issues)]
+[![License](https://img.shields.io/badge/license-MIT-_red.svg)](https://opensource.org/licenses/MIT)
+[![Contribuitions Welcome](https://img.shields.io/badge/contribuitions-welcome-brightgreen.svg?style=flat)](https://github.com/bluurw/carbon/issues)
 
      ▄▄·  ▄▄▄· ▄▄▄  ▄▄▄▄·        ▐ ▄ 
     ▐█ ▌▪▐█ ▀█ ▀▄ █·▐█ ▀█▪ ▄█▀▄ •█▌▐█
@@ -18,11 +18,11 @@ O projeto Carbon, ou Carbono, tem o nome derivado das folhas de carbono que serv
 Desta maneira, o foco do projeto está em copiar informações de grupos do Telegram, antes que eles sejam extintos.
 
 Atualmente, a moderação do Telegram está banindo muitos canais, alguns sem qualquer motivo, outros por má conduta.  
-![alt text](/carbon/imgs/telgram_moderation_overview_graphic.png)  
+![alt text](/imgs/telgram_moderation_overview_graphic.png)  
 [Mais informações sobre moderação do Telegram](https://telegram.org/moderation)
 
 ## **Funcionamento**
-![alt text](image.png)
+![alt text](/imgs/Carbon.png)
 
 
 ### Passo 1: Clone ou faca o download do Repositorio
