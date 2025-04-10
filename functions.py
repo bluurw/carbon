@@ -14,6 +14,6 @@ def error_credentials():
 # filter
 def get_filters():
     panels.filter_itens_panel()
-    filter_map = ["messages", "images", "videos", "audios", "docs", "links"] # types
+    filter_map = ["messages", "images", "videos", "audios", "docs", "links", "stickers"] # types
     filter_input = input('> Enter the number of types you want to filter (no space): ')
     return [filter_map[int(i)] for i in filter_input if i.isdigit() and int(i) < len(filter_map)]
