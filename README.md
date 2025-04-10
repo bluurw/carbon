@@ -77,9 +77,9 @@ Após configurar, você poderá utilizar as funcionalidades livremente!
   Melhorar o processo de compactação, tanto para o salvamento local quanto para a clonagem no GitHub.
 - **Criação de Grupos**:  
   Permite criar grupos automaticamente via API do Telegram, facilitando a organização e o gerenciamento de comunidades.
-- **Re-clonagem Sequencial**
+- **Re-clonagem Sequencial**:
   Permitir a clonagem contínua do mesmo grupo a partir da última mensagem clonada, evitando repetições desnecessárias.
-- **Tratamento do Erro de Tempo de Espera** [URGENTE]
+- **Tratamento do Erro de Tempo de Espera** [URGENTE]:
   Corrigir o problema em que o encaminhamento de muitas mensagens gera uma solicitação de tempo de espera, que atualmente é interpretada como erro.
 
 ## **Compatibilidade**
