@@ -34,6 +34,7 @@ def filter_itens_panel():
 [3] - AUDIO
 [4] - DOCS
 [5] - LINKS
+[6] - STICKER
 ''')
 
 def credentials_panel():
