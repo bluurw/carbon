@@ -71,7 +71,7 @@ Após configurar, você poderá utilizar as funcionalidades livremente!
 
 ## **Próximas Atualizações**
 
-- **Integração com GitHub**:  
+- **Integração com GitHub**:
   Permitir que o usuário clone o conteúdo de um grupo diretamente para um repositório do GitHub.
 - **Compactação de Dados**:  
   Melhorar o processo de compactação, tanto para o salvamento local quanto para a clonagem no GitHub.
